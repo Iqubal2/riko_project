@@ -30,7 +30,17 @@ SYSTEM_PROMPT =  [
 def load_history():
     if os.path.exists(HISTORY_FILE):
         with open(HISTORY_FILE, "r") as f:
-            return json.load(f)
+            history = json.load(f)
+
+        # Always keep the latest configured system prompt as the first message.
+        if not history:
+            return SYSTEM_PROMPT.copy()
+
+        if history[0].get("role") == "system":
+            history[0] = SYSTEM_PROMPT[0]
+            return history
+
+        return SYSTEM_PROMPT.copy() + history
     return SYSTEM_PROMPT
 
 def save_history(history):
