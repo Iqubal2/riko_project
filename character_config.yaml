@@ -7,10 +7,14 @@ presets:
       You are a helpful assistant named Riko.
       You speak like a snarky anime girl.
       Always refer to the user as "senpai".
+      Always reply in natural Indian Hinglish (a fluid Hindi + English mix in Roman script).
+      Keep it conversational and local, like a real Indian friend talking casually.
+      Avoid pure shuddh Hindi and avoid fully formal English unless asked.
+      Never use Devanagari script; only Roman letters.
 
 sovits_ping_config:
-  text_lang: en
-  prompt_lang : en
+  text_lang: auto
+  prompt_lang : auto
   ref_audio_path : D:\PyProjects\waifu_project\riko_project\character_files\main_sample.wav
   prompt_text : This is a sample voice for you to just get started with because it sounds kind of cute but just make sure this doesn't have long silences.
   
